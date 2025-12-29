@@ -75,6 +75,11 @@ char **split_lines(char *line)
   return tokens;
 }
 
+int jsh_exit(char **args)
+{
+  return 0;
+}
+
 void loop()
 {
   char *line;
