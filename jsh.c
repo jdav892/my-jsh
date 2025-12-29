@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define TOK_DELIM "\t\r\n"
+#define RED "\033[0;31m"
+#define RESET "\e[0m"
+
 char *read_line()
 {
   int buffsize = 1024;
