@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char *read_line()
 {
@@ -78,6 +79,32 @@ char **split_lines(char *line)
 int jsh_exit(char **args)
 {
   return 0;
+}
+
+int jsh_execute(char **args)
+{
+  pid_t cpid;
+  int status;
+
+  if (strcmp(args[0], "exit") == 0)
+  {
+    return jsh_exit();
+  }
+
+  cpid = fork();
+
+  if (cpid == 0)
+  {
+    if (execvp(args[0], args) < 0)
+      printf("jsh: command not found: %s\n", args[0]);
+    exit(EXIT_FAILURE);
+  } else if (cpid < 0)
+    printf(RED "Error forking"
+           RESET "\n");
+  else {
+    waitpid(cpid, &status, WUNTRACED);
+  }
+  return 1;
 }
 
 void loop()
