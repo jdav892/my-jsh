@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Wextra CMakeFiles/jsh.dir/jsh.c.o -o jsh 
