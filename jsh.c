@@ -1,10 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 #define TOK_DELIM "\t\r\n"
+#define TK_BUFF_SIZE 64
+
+// ANSI color codes
 #define RED "\033[0;31m"
 #define RESET "\e[0m"
+
+char *read_line();
+char **split_line(char*);
+int jsh_exit(char **);
+int jsh_execute(char **);
 
 char *read_line()
 {
@@ -46,7 +56,7 @@ char *read_line()
   }
 }
 
-char **split_lines(char *line)
+char **split_line(char *line)
 {
   int buffsize = 1024, position = 0;
   char **tokens = malloc(buffsize * sizeof(char *));
@@ -65,7 +75,7 @@ char **split_lines(char *line)
     if (position >= buffsize)
     {
       buffsize += TK_BUFF_SIZE;
-      tokens = realloc(tokens, buffsize * sizeofchar(char *));
+      tokens = realloc(tokens, buffsize * sizeof(char *));
 
       if (!tokens)
       {
@@ -92,7 +102,7 @@ int jsh_execute(char **args)
 
   if (strcmp(args[0], "exit") == 0)
   {
-    return jsh_exit();
+    return jsh_exit(args);
   }
 
   cpid = fork();
@@ -120,9 +130,8 @@ void loop()
   do {
     printf("> ");
     line = read_line();
-    flag = 0;
-    args = split_lines(line);
-    status = dash_launch(args);
+    args = split_line(line);
+    status = jsh_execute(args);
     free(line);
     free(args);
   } while (status);
@@ -130,6 +139,7 @@ void loop()
 
 int main()
 {
+  loop();
   return 0;
 
 }
