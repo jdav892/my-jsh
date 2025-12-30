@@ -72,6 +72,22 @@ void pipe_history_input(char * line)
   fclose(history_file);
 }
 
+void history_input(char **args, char *d)
+{
+  FILE *history_file = fopen(get_history_file_path(), "a+");
+  int j = 0;
+  fprintf(history_file, "%d, ", history_line_count());
+  while(args[j] != NULL)
+  {
+    if(j > 0)
+      fputs(d, history_file);
+    fputs(args[j], history_file);
+    j++;
+  }
+  fputs("\n", history_file);
+  fclose(history_file);
+}
+
 char *read_line()
 {
   int buffsize = 1024;
