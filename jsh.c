@@ -213,6 +213,13 @@ int jsh_pipe(char **args)
   return i;
 }
 
+char *get_history_file_path()
+{
+  static char file_path[128];
+  strcat(strncpy(file_path, getenv("HOME"), 113), "./jsh_history");
+  return file_path;
+}
+
 char *read_line()
 {
   int buffsize = 1024;
