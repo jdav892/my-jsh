@@ -64,6 +64,14 @@ int builtin_funcs_count()
   return sizeof(builtin_str) /sizeof(char *);
 }
 
+// function definitions
+void pipe_history_input(char * line)
+{
+  FILE *history_file = fopen(get_history_file_path(), "a+");
+  fprintf(history_file, "%d, %s\n", history_line_count(), line);
+  fclose(history_file);
+}
+
 char *read_line()
 {
   int buffsize = 1024;
