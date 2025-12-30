@@ -399,16 +399,13 @@ int jsh_exit(char **args)
   return 0;
 }
 
+//executes system cal execvp with the tokenized user input as argument
+//the execvp() call takes palce in a child process
+//the parent waits until the child has funished processing
 int jsh_execute(char **args)
 {
   pid_t cpid;
   int status;
-
-  if (strcmp(args[0], "exit") == 0)
-  {
-    return jsh_exit(args);
-  }
-
   cpid = fork();
 
   if (cpid == 0)
@@ -417,8 +414,7 @@ int jsh_execute(char **args)
       printf("jsh: command not found: %s\n", args[0]);
     exit(EXIT_FAILURE);
   } else if (cpid < 0)
-    printf(RED "Error forking"
-           RESET "\n");
+    printf(RED "Error forking" RESET "\n");
   else {
     waitpid(cpid, &status, WUNTRACED);
   }
