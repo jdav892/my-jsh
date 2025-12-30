@@ -294,6 +294,21 @@ int jsh_history()
   return 1;
 }
 
+int history_line_count()
+{
+  FILE *fp = fopen(get_history_file_path(), "r");
+  int c;
+  int numberOfLines = 1;
+  do
+  {
+    c = getc(fp);
+    if(c == '\n')
+    {
+      numberOfLines++;
+    }
+  }while(c != EOF);
+  return numberOfLines;
+}
 
 char *read_line()
 {
