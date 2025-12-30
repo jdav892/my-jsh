@@ -134,6 +134,23 @@ int args_length(char **args)
   return i;
 }
 
+/*
+ * Starts by coping the current stdin and stdout to tempin and tempout respectively
+ * then loops to check for input redirection if any
+ * fdin is set to current stdin (current stdin or input redirection)
+ * next, th efor loop iterates over each command in the array returned by split_pipes()
+ * the dup2(fdin, 0) call duplicates fdin over 0-as in it sets as the stdin for current session
+ * and subsequent call closes fdin because it is no longer required to be open
+ *
+ * subsequent if-elseif-else mechanism checks for output redirection and set fdout accordingly
+ * if the command in the last one, we would like to see the o/p on the terminal
+ * so the original tempout is resorted and if neither of the two conditions meet, then the stdout
+ * is set to the output of a new pipe created over the fd[2] variable
+ *
+ * now fdout is set and is duplicated to the default stdin
+ * commands are then executed one by one
+ * */
+
 char *read_line()
 {
   int buffsize = 1024;
