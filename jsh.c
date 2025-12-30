@@ -14,6 +14,7 @@
 #define TOK_DELIM "\t\r\n"
 #define TK_BUFF_SIZE 64
 
+// strings to clear terminal
 char *clr[2] = {"clear", "null"};
 
 // ANSI color codes
