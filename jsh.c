@@ -3,18 +3,53 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <signal.h>
+#include <ctype.h>
+#include <fcntl.h>
 
+#define RL_BUFF_SIZE 1024
 #define TOK_DELIM "\t\r\n"
 #define TK_BUFF_SIZE 64
 
+char *clr[2] = {"clear", "null"};
+
 // ANSI color codes
 #define RED "\033[0;31m"
+#define YELLOW "\003[0;33m"
+#define BLUE "\003[0;34m"
+#define CYAN "\003[0;36m"
+#define GREEN "\003[0;32m"
+#define INVERT "\003[0;7m"
+#define BOLD "\e[1m"
+#define ITALICS "\e[3m"
 #define RESET "\e[0m"
 
+//declared functions
 char *read_line();
 char **split_line(char*);
+char *trim_whitespace(char *);
+char **split_pipes(char *);
+char *get_history_file_path();
 int jsh_exit(char **);
 int jsh_execute(char **);
+int jsh_cd(char **);
+int jsh_help(char **);
+int jsh_grep(char **);
+int jsh_launch(char **);
+int history_line_count();
+int jsh_history();
+int jsh_pipe(char **);
+int args_lenth(char **);
+void history_input(char **, char *);
+void pipe_history_input(char *);
+void print_tokens(char *);
+void get_dir(char *);
+void signalHandler();
+
+
 
 char *read_line()
 {
