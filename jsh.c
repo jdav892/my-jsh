@@ -294,6 +294,8 @@ int jsh_history()
   return 1;
 }
 
+//return the current number of lines in history file
+//for appending new items in file
 int history_line_count()
 {
   FILE *fp = fopen(get_history_file_path(), "r");
@@ -309,6 +311,14 @@ int history_line_count()
   }while(c != EOF);
   return numberOfLines;
 }
+
+// handles input of Ctrl-c and not exit until the exit command is entered
+void signalHandler()
+{
+  signal(SIGINT, signalHandler);
+  getchar();
+}
+
 
 char *read_line()
 {
