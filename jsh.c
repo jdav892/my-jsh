@@ -123,6 +123,17 @@ char **split_pipes(char *input)
   return 0;
 }
 
+int args_length(char **args)
+{
+  int i = 0;
+  
+  while(args[i] != NULL)
+  {
+    i++;
+  }
+  return i;
+}
+
 char *read_line()
 {
   int buffsize = 1024;
