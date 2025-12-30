@@ -31,7 +31,7 @@ char *clr[2] = {"clear", "null"};
 //declared functions
 char *read_line();
 char **split_line(char*);
-char *trim_whitespace(char *);
+char *trim_whitespace(char *); // for leading whitespace
 char **split_pipes(char *);
 char *get_history_file_path();
 int jsh_exit(char **);
@@ -43,14 +43,26 @@ int jsh_launch(char **);
 int history_line_count();
 int jsh_history();
 int jsh_pipe(char **);
-int args_lenth(char **);
+int args_length(char **);
 void history_input(char **, char *);
 void pipe_history_input(char *);
 void print_tokens(char *);
 void get_dir(char *);
 void signalHandler();
 
+// array of built in function pointers
+int (*builtin_funcs[])(char **) = {&jsh_cd, &jsh_help, &jsh_exit, &jsh_history, &jsh_grep, &args_length};
 
+// string array of built in commands for strcmp() before invoking execvp()
+char *builtin_str[] = {"cd", "help", "exit", "history", "grep", "sizeof"};
+
+
+// return the size of built in array
+
+int builtin_funcs_count()
+{
+  return sizeof(builtin_str) /sizeof(char *);
+}
 
 char *read_line()
 {
