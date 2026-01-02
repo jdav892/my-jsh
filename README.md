@@ -1,6 +1,7 @@
 # A cross platform UNIX shell written in C
 
 # Supports some basic unix commands such as:
+
   - cd
   - ls
   - touch
