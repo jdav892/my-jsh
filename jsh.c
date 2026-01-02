@@ -360,7 +360,7 @@ int jsh_grep(char **args)
       {
         if(S_ISDIR(path_stat.st_mode))
         {
-          fprintf(stderr, RED "jsh: grep: '%' is a directory not a file" RESET "\n", args[2]);
+          fprintf(stderr, RED "jsh: grep: '%s' is a directory not a file" RESET "\n", args[2]);
           return 1;
         }
       }
@@ -386,6 +386,7 @@ int jsh_grep(char **args)
             fprintf(stderr, RED "jsh: grep: cannot open file '%s': %s" RESET "\n", args[2], strerror(errno));
             break;
         }
+        return 0;
       }
 
       while((fgets(temp, 512, fp)) != NULL)
@@ -555,6 +556,7 @@ char **split_line(char *line)
 
 int jsh_exit(char **args)
 {
+  (void)args;
   return 0;
 }
 
