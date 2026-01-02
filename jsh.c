@@ -319,6 +319,26 @@ void signalHandler()
   getchar();
 }
 
+int jsh_launch(char **args)
+{
+  int i = 0;
+  if(args[0] == NULL)
+  {
+    return 1;
+  }
+  else if(strcmp(args[0], "history") != 0 && strcmp(args[0], "exit") != 0 && strcmp(args[0], "clear") != 0)
+  {
+    history_input(args, "");
+  }
+  for(i = 0;  i < builtin_funcs_count(); i++)
+  {
+    if(strcmp(args[0], builtin_str[i]) == 0)
+    {
+      return(*builtin_funcs[i])(args);
+    }
+  }
+  return jsh_execute(args);
+}
 
 char *read_line()
 {
