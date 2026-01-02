@@ -423,6 +423,19 @@ int jsh_cd(char **args)
   return 1;
 }
 
+/*
+ * Test function
+ * */
+void print_token(char **tokens)
+{
+  int i = 0;
+  while(tokens[i] != NULL)
+  {
+    printf("%s\n", tokens[i]);
+    i++;
+  }
+}
+
 char *read_line()
 {
   int buffsize = 1024;
