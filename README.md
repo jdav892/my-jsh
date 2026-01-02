@@ -1,7 +1,9 @@
 # A cross platform UNIX shell written in C
 
 # Supports some basic unix commands such as:
-  - ls 
+  - cd
+  - ls
+  - touch
   - cat
   - grep
   - pwd
@@ -9,10 +11,4 @@
   - rm
   - cp 
   - mv
-  * among other standard unix commands
-
-# TBD:
-  - History
-  - Piping
-  - More colored text
-  
+  * as well as a history command among other standard unix commands
