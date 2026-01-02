@@ -9,6 +9,7 @@
 #include <signal.h>
 #include <ctype.h>
 #include <fcntl.h>
+#include <errno.h>
 
 #define RL_BUFF_SIZE 1024
 #define TOK_DELIM " \t\r\n"
@@ -352,7 +353,41 @@ int jsh_grep(char **args)
   {
     if(args[1] != NULL && args[2] != NULL)
     {
+      // local struct variable
+      struct stat path_stat;
+      
+      if(stat(args[2], &path_stat) == 0)
+      {
+        if(S_ISDIR(path_stat.st_mode))
+        {
+          fprintf(stderr, RED "jsh: grep: '%' is a directory not a file" RESET "\n", args[2]);
+          return 1;
+        }
+      }
       fp = fopen(args[2], "r");
+      
+      if(fp == NULL)
+      {
+        switch(errno)
+        {
+          case ENOENT:
+            fprintf(stderr, RED "jsh: grep: file '%s' does not exist" RESET "\n", args[2]);
+            break;
+          
+          case EACCES:
+            fprintf(stderr, RED "jsh: grep: permission denied for file '%s'" RESET "\n", args[2]);
+            break;
+
+          case EISDIR:
+            fprintf(stderr, RED "jsh: grep: '%s' is a directory" RESET "\n", args[2]);
+            break;
+
+          default:
+            fprintf(stderr, RED "jsh: grep: cannot open file '%s': %s" RESET "\n", args[2], strerror(errno));
+            break;
+        }
+      }
+
       while((fgets(temp, 512, fp)) != NULL)
       {
         if(strstr(temp, args[1]))
