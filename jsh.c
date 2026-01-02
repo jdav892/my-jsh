@@ -342,6 +342,7 @@ int jsh_launch(char **args)
   return jsh_execute(args);
 }
 
+// Need to add a way to raise error when file or directory is not found
 int jsh_grep(char **args)
 {
   FILE *fp = NULL;
