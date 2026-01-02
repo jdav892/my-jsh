@@ -388,6 +388,26 @@ int jsh_help(char **args)
   return 1;
 }
 
+/*
+ * Gives current working directory for prompt
+ * */
+void get_dir(char *state)
+{
+  char cwd[1024];
+  if(getcwd(cwd, sizeof(cwd)) != NULL)
+  {
+    if(strcmp(state, "loop") == 0)
+      printf(RED " [ " RESET CYAN "%s" RESET RED " ] " RESET, cwd);
+    else if(strcmp(state, "pwd") == 0)
+        printf("%s\n", cwd);
+  }
+  else 
+  {
+    printf("%sgetcwd() error%s", RED, RESET);
+  }
+}
+
+
 char *read_line()
 {
   int buffsize = 1024;
