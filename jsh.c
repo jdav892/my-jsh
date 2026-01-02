@@ -400,7 +400,7 @@ void get_dir(char *state)
   if(getcwd(cwd, sizeof(cwd)) != NULL)
   {
     if(strcmp(state, "loop") == 0)
-      printf(RED " [ " RESET CYAN "%s" RESET RED " ] " RESET, cwd);
+      printf(RED " [ " RESET GREEN "%s" RESET RED " ] " RESET, cwd);
     else if(strcmp(state, "pwd") == 0)
         printf("%s\n", cwd);
   }
