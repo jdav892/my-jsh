@@ -438,7 +438,7 @@ void print_token(char **tokens)
 
 char *read_line()
 {
-  int buffsize = 1024;
+  int buffsize = RL_BUFF_SIZE;
   int position = 0;
   char *buffer = malloc(sizeof(char) *buffsize);
   int c;
@@ -457,14 +457,17 @@ char *read_line()
       //printf("\n");
       buffer[position] = '\0';
       return buffer;
-    } else {
+    } 
+    else 
+    {
       buffer[position] = c;
     }
     position++;
 
     if (position >= buffsize) 
     {
-      buffsize += 1024;
+      printf("Buffer Overflow.... allocating more memory")// ?? LOL
+      buffsize += RL_BUFF_SIZE;
       buffer = realloc(buffer, buffsize);
 
       if(!buffer)
@@ -478,7 +481,7 @@ char *read_line()
 
 char **split_line(char *line)
 {
-  int buffsize = 1024, position = 0;
+  int buffsize = TK_BUFF_SIZE, position = 0;
   char **tokens = malloc(buffsize * sizeof(char *));
   char *token;
 
