@@ -487,6 +487,7 @@ char **split_line(char *line)
       if (!tokens)
       {
         fprintf(stderr, "%sjsh: Allocation Error%s\n", RED, RESET);
+        exit(EXIT_FAILURE);
       }
     }
 
