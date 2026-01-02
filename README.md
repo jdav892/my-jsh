@@ -4,6 +4,7 @@
   - cd
   - ls
   - touch
+  - ls 
   - cat
   - grep
   - pwd
