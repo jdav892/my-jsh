@@ -541,17 +541,44 @@ int jsh_execute(char **args)
   return 1;
 }
 
+/*
+ * Driver Func
+ *
+ * status var controlled while loop
+ * ever iteration first prints the prompt(cwd)
+ * then proceeds to read user input using the function read_line()
+ * the returned stream of tokens are then passedd onto the launch function
+ * which returns 0 or 1 depending on the execution
+ * loop exists accordingly
+ * */
+
 void loop()
 {
   char *line;
   char **args;
-  int status = 1;
+  int status = 1, i = 0, flag = 0;
 
   do {
-    printf("> ");
+    get_dir("loop");
+    printf(CYAN "> " RESET);
     line = read_line();
-    args = split_line(line);
-    status = jsh_execute(args);
+    flag = 0;
+    i = 0;
+    while(line[i] != '\0')
+    {
+      if(line[i] == '|')
+      {
+        flag = 1;
+        break;
+      }
+      i++;
+    }
+    if(flag)
+    {
+      pipe_history_input(line);
+      args = split_pipes(line);
+      status = jsh_pipe(args);
+    }
     free(line);
     free(args);
   } while (status);
@@ -560,6 +587,6 @@ void loop()
 int main()
 {
   loop();
-  return 0;
+  return EXIT_SUCCESS;
 
 }
