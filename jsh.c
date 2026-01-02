@@ -11,7 +11,7 @@
 #include <fcntl.h>
 
 #define RL_BUFF_SIZE 1024
-#define TOK_DELIM "\t\r\n"
+#define TOK_DELIM " \t\r\n"
 #define TK_BUFF_SIZE 64
 
 // strings to clear terminal
@@ -111,7 +111,7 @@ char **split_pipes(char *input)
   {
     s[i] = trim_whitespace(p);
     i++;
-    p = strtok(NULL, "| ");
+    p = strtok(NULL, "|");
   }
   s[i] = NULL;
   i = 0;
@@ -120,7 +120,7 @@ char **split_pipes(char *input)
     printf("%s\n", s[i]);
     i++;
   }
-  return 0;
+  return s;
 }
 
 int args_length(char **args)
@@ -216,7 +216,9 @@ int jsh_pipe(char **args)
 char *get_history_file_path()
 {
   static char file_path[128];
-  strcat(strncpy(file_path, getenv("HOME"), 113), "./jsh_history");
+  strncpy(file_path, getenv("HOME"), sizeof(file_path) - 1);
+  file_path[sizeof(file_path) - 1] = '\0';
+  strcat(file_path, "/.jsh_history");
   return file_path;
 }
 
@@ -328,7 +330,7 @@ int jsh_launch(char **args)
   }
   else if(strcmp(args[0], "history") != 0 && strcmp(args[0], "exit") != 0 && strcmp(args[0], "clear") != 0)
   {
-    history_input(args, "");
+    history_input(args, " ");
   }
   for(i = 0;  i < builtin_funcs_count(); i++)
   {
@@ -412,12 +414,14 @@ int jsh_cd(char **args)
   if(args[1] == NULL)
   {
     fprintf(stderr, "%sjsh: Please enter a path to cd%s\n", YELLOW, RESET);
+    return 1;
   }
   else
   {
-    if(chdir(args[1]) > 0)
+    if(chdir(args[1]) < 0)
     {
       perror("jsh");
+      return 1;
     }
   }
   return 1;
@@ -466,7 +470,7 @@ char *read_line()
 
     if (position >= buffsize) 
     {
-      printf("Buffer Overflow.... allocating more memory")// ?? LOL
+      printf("Buffer Overflow.... allocating more memory");// ?? LOL
       buffsize += RL_BUFF_SIZE;
       buffer = realloc(buffer, buffsize);
 
@@ -560,7 +564,7 @@ void loop()
 
   do {
     get_dir("loop");
-    printf(CYAN "> " RESET);
+    printf(BLUE "> " RESET);
     line = read_line();
     flag = 0;
     i = 0;
@@ -578,6 +582,11 @@ void loop()
       pipe_history_input(line);
       args = split_pipes(line);
       status = jsh_pipe(args);
+    }
+    else 
+    {
+      args = split_line(line);
+      status = jsh_launch(args);
     }
     free(line);
     free(args);
