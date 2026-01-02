@@ -340,6 +340,38 @@ int jsh_launch(char **args)
   return jsh_execute(args);
 }
 
+int jsh_grep(char **args)
+{
+  FILE *fp = NULL;
+  int flag = 0;
+  char temp[512];
+  int line_num = 1;
+  if(args[0] != NULL && strcmp(args[0], "grep") == 0)
+  {
+    if(args[1] != NULL && args[2] != NULL)
+    {
+      fp = fopen(args[2], "r");
+      while((fgets(temp, 512, fp)) != NULL)
+      {
+        if(strstr(temp, args[1]))
+        {
+          printf("%d, %s", line_num, temp);
+          flag = 1;
+        }
+        line_num++;
+      }
+      fclose(fp);
+    }
+    else
+    {
+      fprintf(stderr, RED "jsh: grep requires two parameters, " ITALICS "PATTERN" RESET RED " and " RED ITALICS "FILE" RESET "\n");
+    }
+  }
+  if(flag == 0)
+    printf("No matches were found \n");
+  return 1;
+}
+
 char *read_line()
 {
   int buffsize = 1024;
