@@ -7,6 +7,7 @@
   - touch
   - ls 
   - cat
+  - clear
   - grep
   - pwd
   - mkdir
