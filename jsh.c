@@ -386,7 +386,7 @@ int jsh_grep(char **args)
             fprintf(stderr, RED "jsh: grep: cannot open file '%s': %s" RESET "\n", args[2], strerror(errno));
             break;
         }
-        return 0;
+        return 1;
       }
 
       while((fgets(temp, 512, fp)) != NULL)
