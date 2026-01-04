@@ -136,16 +136,16 @@ int args_length(char **args)
 }
 
 /*
- * Starts by coping the current stdin and stdout to tempin and tempout respectively
+ * Starts by copying the current stdin and stdout to tempin and tempout respectively
  * then loops to check for input redirection if any
  * fdin is set to current stdin (current stdin or input redirection)
- * next, th efor loop iterates over each command in the array returned by split_pipes()
- * the dup2(fdin, 0) call duplicates fdin over 0-as in it sets as the stdin for current session
+ * next, the for loop iterates over each command in the array returned by split_pipes()
+ * the dup2(fdin, 0) call duplicates fdin over 0 as in it sets the stdin for current session
  * and subsequent call closes fdin because it is no longer required to be open
  *
  * subsequent if-elseif-else mechanism checks for output redirection and set fdout accordingly
- * if the command in the last one, we would like to see the o/p on the terminal
- * so the original tempout is resorted and if neither of the two conditions meet, then the stdout
+ * if the command is in the last one, we would like to see the o/p on the terminal
+ * so the original tempout is restorted and if neither of the two conditions are met, then the stdout
  * is set to the output of a new pipe created over the fd[2] variable
  *
  * now fdout is set and is duplicated to the default stdin
@@ -560,9 +560,9 @@ int jsh_exit(char **args)
   return 0;
 }
 
-//executes system cal execvp with the tokenized user input as argument
-//the execvp() call takes palce in a child process
-//the parent waits until the child has funished processing
+//executes system call execvp with the tokenized user input as argument
+//the execvp() call takes place in a child process
+//the parent waits until the child has finished processing
 int jsh_execute(char **args)
 {
   pid_t cpid;
@@ -586,11 +586,11 @@ int jsh_execute(char **args)
  * Driver Func
  *
  * status var controlled while loop
- * ever iteration first prints the prompt(cwd)
+ * every iteration first prints the prompt(cwd)
  * then proceeds to read user input using the function read_line()
- * the returned stream of tokens are then passedd onto the launch function
+ * the returned stream of tokens are then passed onto the launch function
  * which returns 0 or 1 depending on the execution
- * loop exists accordingly
+ * loop exits accordingly
  * */
 
 void loop()
