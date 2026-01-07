@@ -1,8 +1,0 @@
-/home/jadavila9/dev/jsh/build/CMakeFiles/jsh.dir
-/home/jadavila9/dev/jsh/build/CMakeFiles/clean-all.dir
-/home/jadavila9/dev/jsh/build/CMakeFiles/edit_cache.dir
-/home/jadavila9/dev/jsh/build/CMakeFiles/rebuild_cache.dir
-/home/jadavila9/dev/jsh/build/CMakeFiles/list_install_components.dir
-/home/jadavila9/dev/jsh/build/CMakeFiles/install.dir
-/home/jadavila9/dev/jsh/build/CMakeFiles/install/local.dir
-/home/jadavila9/dev/jsh/build/CMakeFiles/install/strip.dir
