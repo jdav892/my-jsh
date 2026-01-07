@@ -9,7 +9,14 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
 
 #Source files
 set(SOURCES
-  jsh.c
+  main.c
+  builtin.c
+  parser.c
+  history.c
+  pipe.c
+  utils.c
+  execute.c
+  jsh.h
 )
 
 #Create executable

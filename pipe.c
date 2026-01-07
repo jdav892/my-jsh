@@ -28,7 +28,7 @@ int jsh_pipe(char **args)
     close(fdin);
     if(i == args_length(args) - 3 && strcmp(args[i + 1], ">") == 0)
     {
-      if((fdout = open(args[i + 1], O_WRONLY)))
+      if((fdout = open(args[i + 1], O_WRONLY | O_CREAT | O_TRUNC, 0644)) == -1)
         i++;
     }
     else if(i == args_length(args) - flag - 1)
@@ -48,7 +48,7 @@ int jsh_pipe(char **args)
     if(pid == 0)
     {
       execvp(rargs[0], rargs);
-      perror("error forking\n");
+      perror("error executing command\n");
       exit(EXIT_FAILURE);
     }
     wait(NULL);

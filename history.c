@@ -14,6 +14,9 @@ int history_line_count()
   FILE *fp = fopen(get_history_file_path(), "r");
   int c;
   int numberOfLines = 1;
+  
+  if(!fp) return 1;
+
   do
   {
     c = getc(fp);

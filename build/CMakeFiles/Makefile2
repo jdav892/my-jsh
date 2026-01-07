@@ -82,12 +82,12 @@ clean: CMakeFiles/clean-all.dir/clean
 CMakeFiles/jsh.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=2,3 "Built target jsh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=2,3,4,5,6,7,8,9 "Built target jsh"
 .PHONY : CMakeFiles/jsh.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/jsh.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jadavila9/dev/jsh/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jadavila9/dev/jsh/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/jsh.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jadavila9/dev/jsh/build/CMakeFiles 0
 .PHONY : CMakeFiles/jsh.dir/rule

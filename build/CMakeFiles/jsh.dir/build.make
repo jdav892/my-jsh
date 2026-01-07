@@ -69,31 +69,127 @@ include CMakeFiles/jsh.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/jsh.dir/flags.make
 
-CMakeFiles/jsh.dir/jsh.c.o: CMakeFiles/jsh.dir/flags.make
-CMakeFiles/jsh.dir/jsh.c.o: /home/jadavila9/dev/jsh/jsh.c
-CMakeFiles/jsh.dir/jsh.c.o: CMakeFiles/jsh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/jsh.dir/jsh.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/jsh.dir/jsh.c.o -MF CMakeFiles/jsh.dir/jsh.c.o.d -o CMakeFiles/jsh.dir/jsh.c.o -c /home/jadavila9/dev/jsh/jsh.c
+CMakeFiles/jsh.dir/main.c.o: CMakeFiles/jsh.dir/flags.make
+CMakeFiles/jsh.dir/main.c.o: /home/jadavila9/dev/jsh/main.c
+CMakeFiles/jsh.dir/main.c.o: CMakeFiles/jsh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/jsh.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/jsh.dir/main.c.o -MF CMakeFiles/jsh.dir/main.c.o.d -o CMakeFiles/jsh.dir/main.c.o -c /home/jadavila9/dev/jsh/main.c
 
-CMakeFiles/jsh.dir/jsh.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/jsh.dir/jsh.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jadavila9/dev/jsh/jsh.c > CMakeFiles/jsh.dir/jsh.c.i
+CMakeFiles/jsh.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/jsh.dir/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jadavila9/dev/jsh/main.c > CMakeFiles/jsh.dir/main.c.i
 
-CMakeFiles/jsh.dir/jsh.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/jsh.dir/jsh.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jadavila9/dev/jsh/jsh.c -o CMakeFiles/jsh.dir/jsh.c.s
+CMakeFiles/jsh.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/jsh.dir/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jadavila9/dev/jsh/main.c -o CMakeFiles/jsh.dir/main.c.s
+
+CMakeFiles/jsh.dir/builtin.c.o: CMakeFiles/jsh.dir/flags.make
+CMakeFiles/jsh.dir/builtin.c.o: /home/jadavila9/dev/jsh/builtin.c
+CMakeFiles/jsh.dir/builtin.c.o: CMakeFiles/jsh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/jsh.dir/builtin.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/jsh.dir/builtin.c.o -MF CMakeFiles/jsh.dir/builtin.c.o.d -o CMakeFiles/jsh.dir/builtin.c.o -c /home/jadavila9/dev/jsh/builtin.c
+
+CMakeFiles/jsh.dir/builtin.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/jsh.dir/builtin.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jadavila9/dev/jsh/builtin.c > CMakeFiles/jsh.dir/builtin.c.i
+
+CMakeFiles/jsh.dir/builtin.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/jsh.dir/builtin.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jadavila9/dev/jsh/builtin.c -o CMakeFiles/jsh.dir/builtin.c.s
+
+CMakeFiles/jsh.dir/parser.c.o: CMakeFiles/jsh.dir/flags.make
+CMakeFiles/jsh.dir/parser.c.o: /home/jadavila9/dev/jsh/parser.c
+CMakeFiles/jsh.dir/parser.c.o: CMakeFiles/jsh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/jsh.dir/parser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/jsh.dir/parser.c.o -MF CMakeFiles/jsh.dir/parser.c.o.d -o CMakeFiles/jsh.dir/parser.c.o -c /home/jadavila9/dev/jsh/parser.c
+
+CMakeFiles/jsh.dir/parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/jsh.dir/parser.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jadavila9/dev/jsh/parser.c > CMakeFiles/jsh.dir/parser.c.i
+
+CMakeFiles/jsh.dir/parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/jsh.dir/parser.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jadavila9/dev/jsh/parser.c -o CMakeFiles/jsh.dir/parser.c.s
+
+CMakeFiles/jsh.dir/history.c.o: CMakeFiles/jsh.dir/flags.make
+CMakeFiles/jsh.dir/history.c.o: /home/jadavila9/dev/jsh/history.c
+CMakeFiles/jsh.dir/history.c.o: CMakeFiles/jsh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/jsh.dir/history.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/jsh.dir/history.c.o -MF CMakeFiles/jsh.dir/history.c.o.d -o CMakeFiles/jsh.dir/history.c.o -c /home/jadavila9/dev/jsh/history.c
+
+CMakeFiles/jsh.dir/history.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/jsh.dir/history.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jadavila9/dev/jsh/history.c > CMakeFiles/jsh.dir/history.c.i
+
+CMakeFiles/jsh.dir/history.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/jsh.dir/history.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jadavila9/dev/jsh/history.c -o CMakeFiles/jsh.dir/history.c.s
+
+CMakeFiles/jsh.dir/pipe.c.o: CMakeFiles/jsh.dir/flags.make
+CMakeFiles/jsh.dir/pipe.c.o: /home/jadavila9/dev/jsh/pipe.c
+CMakeFiles/jsh.dir/pipe.c.o: CMakeFiles/jsh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/jsh.dir/pipe.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/jsh.dir/pipe.c.o -MF CMakeFiles/jsh.dir/pipe.c.o.d -o CMakeFiles/jsh.dir/pipe.c.o -c /home/jadavila9/dev/jsh/pipe.c
+
+CMakeFiles/jsh.dir/pipe.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/jsh.dir/pipe.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jadavila9/dev/jsh/pipe.c > CMakeFiles/jsh.dir/pipe.c.i
+
+CMakeFiles/jsh.dir/pipe.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/jsh.dir/pipe.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jadavila9/dev/jsh/pipe.c -o CMakeFiles/jsh.dir/pipe.c.s
+
+CMakeFiles/jsh.dir/utils.c.o: CMakeFiles/jsh.dir/flags.make
+CMakeFiles/jsh.dir/utils.c.o: /home/jadavila9/dev/jsh/utils.c
+CMakeFiles/jsh.dir/utils.c.o: CMakeFiles/jsh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/jsh.dir/utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/jsh.dir/utils.c.o -MF CMakeFiles/jsh.dir/utils.c.o.d -o CMakeFiles/jsh.dir/utils.c.o -c /home/jadavila9/dev/jsh/utils.c
+
+CMakeFiles/jsh.dir/utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/jsh.dir/utils.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jadavila9/dev/jsh/utils.c > CMakeFiles/jsh.dir/utils.c.i
+
+CMakeFiles/jsh.dir/utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/jsh.dir/utils.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jadavila9/dev/jsh/utils.c -o CMakeFiles/jsh.dir/utils.c.s
+
+CMakeFiles/jsh.dir/execute.c.o: CMakeFiles/jsh.dir/flags.make
+CMakeFiles/jsh.dir/execute.c.o: /home/jadavila9/dev/jsh/execute.c
+CMakeFiles/jsh.dir/execute.c.o: CMakeFiles/jsh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/jsh.dir/execute.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/jsh.dir/execute.c.o -MF CMakeFiles/jsh.dir/execute.c.o.d -o CMakeFiles/jsh.dir/execute.c.o -c /home/jadavila9/dev/jsh/execute.c
+
+CMakeFiles/jsh.dir/execute.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/jsh.dir/execute.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jadavila9/dev/jsh/execute.c > CMakeFiles/jsh.dir/execute.c.i
+
+CMakeFiles/jsh.dir/execute.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/jsh.dir/execute.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jadavila9/dev/jsh/execute.c -o CMakeFiles/jsh.dir/execute.c.s
 
 # Object files for target jsh
 jsh_OBJECTS = \
-"CMakeFiles/jsh.dir/jsh.c.o"
+"CMakeFiles/jsh.dir/main.c.o" \
+"CMakeFiles/jsh.dir/builtin.c.o" \
+"CMakeFiles/jsh.dir/parser.c.o" \
+"CMakeFiles/jsh.dir/history.c.o" \
+"CMakeFiles/jsh.dir/pipe.c.o" \
+"CMakeFiles/jsh.dir/utils.c.o" \
+"CMakeFiles/jsh.dir/execute.c.o"
 
 # External object files for target jsh
 jsh_EXTERNAL_OBJECTS =
 
-jsh: CMakeFiles/jsh.dir/jsh.c.o
+jsh: CMakeFiles/jsh.dir/main.c.o
+jsh: CMakeFiles/jsh.dir/builtin.c.o
+jsh: CMakeFiles/jsh.dir/parser.c.o
+jsh: CMakeFiles/jsh.dir/history.c.o
+jsh: CMakeFiles/jsh.dir/pipe.c.o
+jsh: CMakeFiles/jsh.dir/utils.c.o
+jsh: CMakeFiles/jsh.dir/execute.c.o
 jsh: CMakeFiles/jsh.dir/build.make
 jsh: CMakeFiles/jsh.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable jsh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jadavila9/dev/jsh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable jsh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/jsh.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

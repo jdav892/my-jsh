@@ -187,29 +187,173 @@ clean-all/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean-all.dir/build.make CMakeFiles/clean-all.dir/build
 .PHONY : clean-all/fast
 
-jsh.o: jsh.c.o
-.PHONY : jsh.o
+builtin.o: builtin.c.o
+.PHONY : builtin.o
 
 # target to build an object file
-jsh.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/jsh.c.o
-.PHONY : jsh.c.o
+builtin.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/builtin.c.o
+.PHONY : builtin.c.o
 
-jsh.i: jsh.c.i
-.PHONY : jsh.i
+builtin.i: builtin.c.i
+.PHONY : builtin.i
 
 # target to preprocess a source file
-jsh.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/jsh.c.i
-.PHONY : jsh.c.i
+builtin.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/builtin.c.i
+.PHONY : builtin.c.i
 
-jsh.s: jsh.c.s
-.PHONY : jsh.s
+builtin.s: builtin.c.s
+.PHONY : builtin.s
 
 # target to generate assembly for a file
-jsh.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/jsh.c.s
-.PHONY : jsh.c.s
+builtin.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/builtin.c.s
+.PHONY : builtin.c.s
+
+execute.o: execute.c.o
+.PHONY : execute.o
+
+# target to build an object file
+execute.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/execute.c.o
+.PHONY : execute.c.o
+
+execute.i: execute.c.i
+.PHONY : execute.i
+
+# target to preprocess a source file
+execute.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/execute.c.i
+.PHONY : execute.c.i
+
+execute.s: execute.c.s
+.PHONY : execute.s
+
+# target to generate assembly for a file
+execute.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/execute.c.s
+.PHONY : execute.c.s
+
+history.o: history.c.o
+.PHONY : history.o
+
+# target to build an object file
+history.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/history.c.o
+.PHONY : history.c.o
+
+history.i: history.c.i
+.PHONY : history.i
+
+# target to preprocess a source file
+history.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/history.c.i
+.PHONY : history.c.i
+
+history.s: history.c.s
+.PHONY : history.s
+
+# target to generate assembly for a file
+history.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/history.c.s
+.PHONY : history.c.s
+
+main.o: main.c.o
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/main.c.s
+.PHONY : main.c.s
+
+parser.o: parser.c.o
+.PHONY : parser.o
+
+# target to build an object file
+parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/parser.c.o
+.PHONY : parser.c.o
+
+parser.i: parser.c.i
+.PHONY : parser.i
+
+# target to preprocess a source file
+parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/parser.c.i
+.PHONY : parser.c.i
+
+parser.s: parser.c.s
+.PHONY : parser.s
+
+# target to generate assembly for a file
+parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/parser.c.s
+.PHONY : parser.c.s
+
+pipe.o: pipe.c.o
+.PHONY : pipe.o
+
+# target to build an object file
+pipe.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/pipe.c.o
+.PHONY : pipe.c.o
+
+pipe.i: pipe.c.i
+.PHONY : pipe.i
+
+# target to preprocess a source file
+pipe.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/pipe.c.i
+.PHONY : pipe.c.i
+
+pipe.s: pipe.c.s
+.PHONY : pipe.s
+
+# target to generate assembly for a file
+pipe.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/pipe.c.s
+.PHONY : pipe.c.s
+
+utils.o: utils.c.o
+.PHONY : utils.o
+
+# target to build an object file
+utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/utils.c.o
+.PHONY : utils.c.o
+
+utils.i: utils.c.i
+.PHONY : utils.i
+
+# target to preprocess a source file
+utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/utils.c.i
+.PHONY : utils.c.i
+
+utils.s: utils.c.s
+.PHONY : utils.s
+
+# target to generate assembly for a file
+utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsh.dir/build.make CMakeFiles/jsh.dir/utils.c.s
+.PHONY : utils.c.s
 
 # Help Target
 help:
@@ -225,9 +369,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... clean-all"
 	@echo "... jsh"
-	@echo "... jsh.o"
-	@echo "... jsh.i"
-	@echo "... jsh.s"
+	@echo "... builtin.o"
+	@echo "... builtin.i"
+	@echo "... builtin.s"
+	@echo "... execute.o"
+	@echo "... execute.i"
+	@echo "... execute.s"
+	@echo "... history.o"
+	@echo "... history.i"
+	@echo "... history.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... parser.o"
+	@echo "... parser.i"
+	@echo "... parser.s"
+	@echo "... pipe.o"
+	@echo "... pipe.i"
+	@echo "... pipe.s"
+	@echo "... utils.o"
+	@echo "... utils.i"
+	@echo "... utils.s"
 .PHONY : help
 
 

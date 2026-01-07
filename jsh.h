@@ -45,7 +45,7 @@ int args_length(char **);
 int builtin_funcs_count();
 void history_input(char **, char *);
 void pipe_history_input(char *);
-void print_token(char *);
+void print_tokens(char **);
 void get_dir(char *);
 void signalHandler();
 extern int (*builtin_funcs[])(char **);
