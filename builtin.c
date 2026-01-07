@@ -183,3 +183,14 @@ int jsh_grep(char **args)
     printf("No matches were found \n");
   return 1;
 }
+
+int args_length(char **args)
+{
+  int i = 0;
+  
+  while(args[i] != NULL)
+  {
+    i++;
+  }
+  return i;
+}
