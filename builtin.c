@@ -8,6 +8,7 @@ int (*builtin_funcs[])(char **) = {&jsh_cd,      &jsh_help, &jsh_exit,
 char *builtin_str[] = {"cd", "help", "exit", "history", "grep", "sizeof"};
 
 // return the size of built in array
+char *clr[2] = { "clear", "null"};
 
 int builtin_funcs_count() { return sizeof(builtin_str) / sizeof(char *); }
 
@@ -44,12 +45,11 @@ int jsh_exit(char **args) {
   return 0;
 }
 
-int jsh_history() {
+int jsh_history(char **args) {
   FILE *fp = fopen(get_history_file_path(), "r");
   int ch, c, line_num = 1;
   char line[128];
   char prev_comm[128];
-  char **args = NULL;
   if (!fp)
     fprintf(stderr, RED "jsh: file not found" RESET "\n");
   else {

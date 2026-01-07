@@ -1,19 +1,9 @@
 #include "jsh.h"
 
-// ANSI color codes
-#define RED "\033[0;31m"
-#define YELLOW "\033[0;33m"
-#define BLUE "\033[0;34m"
-#define CYAN "\033[0;36m"
-#define GREEN "\033[0;32m"
-
-
-char *clr[2] = {"clear", "null"};
-
 /*
  * Test function
  * */
-void print_token(char **tokens)
+void print_tokens(char **tokens)
 {
   int i = 0;
   while(tokens[i] != NULL)

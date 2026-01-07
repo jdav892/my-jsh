@@ -15,6 +15,12 @@
 #define TOK_DELIM " \t\r\n"
 #define TK_BUFF_SIZE 64
 
+// ANSI color codes
+#define RED "\033[0;31m"
+#define YELLOW "\033[0;33m"
+#define BLUE "\033[0;34m"
+#define CYAN "\033[0;36m"
+#define GREEN "\033[0;32m"
 #define INVERT "\033[0;7m"
 #define BOLD "\e[1m"
 #define ITALICS "\e[3m"
@@ -33,11 +39,15 @@ int jsh_help(char **);
 int jsh_grep(char **);
 int jsh_launch(char **);
 int history_line_count();
-int jsh_history();
+int jsh_history(char **);
 int jsh_pipe(char **);
 int args_length(char **);
+int builtin_funcs_count();
 void history_input(char **, char *);
 void pipe_history_input(char *);
-void print_tokens(char *);
+void print_token(char *);
 void get_dir(char *);
 void signalHandler();
+extern int (*builtin_funcs[])(char **);
+extern char *builtin_str[];
+extern char *clr[2];
