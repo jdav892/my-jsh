@@ -1,3 +1,8 @@
+/*
+ * This is the original implementation for jsh
+ * used as a reference for modularizing the project
+ * also to have a working mental model of the scope of the project
+ * */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
