@@ -31,3 +31,10 @@ void get_dir(char *state)
     printf("%sgetcwd() error%s", RED, RESET);
   }
 }
+
+// handles input of Ctrl-c and not exit until the exit command is entered
+void signalHandler()
+{
+  signal(SIGINT, signalHandler);
+  getchar();
+}
