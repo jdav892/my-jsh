@@ -11,7 +11,6 @@ char *builtin_str[] = {"cd", "help", "exit", "history", "grep", "sizeof"};
 
 int builtin_funcs_count() { return sizeof(builtin_str) / sizeof(char *); }
 
-char *clr[2] = {"clear", "null"};
 
 int jsh_cd(char **args) {
   if (args[1] == NULL) {
