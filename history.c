@@ -40,3 +40,10 @@ void history_input(char **args, char *d)
   fputs("\n", history_file);
   fclose(history_file);
 }
+
+void pipe_history_input(char * line)
+{
+  FILE *history_file = fopen(get_history_file_path(), "a+");
+  fprintf(history_file, "%d, %s\n", history_line_count(), line);
+  fclose(history_file);
+}
