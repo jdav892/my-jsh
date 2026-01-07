@@ -34,3 +34,46 @@ char **split_pipes(char *input)
   }
   return s;
 }
+
+char *read_line()
+{
+  int buffsize = RL_BUFF_SIZE;
+  int position = 0;
+  char *buffer = malloc(sizeof(char) *buffsize);
+  int c;
+
+  if(!buffer)
+  {
+    fprintf(stderr, "%sjsh: Allocation Error%s\n", RED, RESET);
+    exit(EXIT_FAILURE);
+  }
+
+  while(1)
+  {
+    c = getchar();
+    if (c == EOF || c == '\n')
+    {
+      //printf("\n");
+      buffer[position] = '\0';
+      return buffer;
+    } 
+    else 
+    {
+      buffer[position] = c;
+    }
+    position++;
+
+    if (position >= buffsize) 
+    {
+      printf("Buffer Overflow.... allocating more memory");// ?? LOL
+      buffsize += RL_BUFF_SIZE;
+      buffer = realloc(buffer, buffsize);
+
+      if(!buffer)
+      {
+        fprintf(stderr, "jsh: Allocation Error \n");
+        exit(EXIT_FAILURE);
+      }
+    }
+  }
+}
