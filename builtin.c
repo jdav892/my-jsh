@@ -116,3 +116,70 @@ int jsh_history()
     }
   return 1;
 }
+
+int jsh_grep(char **args)
+{
+  FILE *fp = NULL;
+  int flag = 0;
+  char temp[512];
+  int line_num = 1;
+  if(args[0] != NULL && strcmp(args[0], "grep") == 0)
+  {
+    if(args[1] != NULL && args[2] != NULL)
+    {
+      // local struct variable
+      struct stat path_stat;
+      
+      if(stat(args[2], &path_stat) == 0)
+      {
+        if(S_ISDIR(path_stat.st_mode))
+        {
+          fprintf(stderr, RED "jsh: grep: '%s' is a directory not a file" RESET "\n", args[2]);
+          return 1;
+        }
+      }
+      fp = fopen(args[2], "r");
+      
+      if(fp == NULL)
+      {
+        switch(errno)
+        {
+          case ENOENT:
+            fprintf(stderr, RED "jsh: grep: file '%s' does not exist" RESET "\n", args[2]);
+            break;
+          
+          case EACCES:
+            fprintf(stderr, RED "jsh: grep: permission denied for file '%s'" RESET "\n", args[2]);
+            break;
+
+          case EISDIR:
+            fprintf(stderr, RED "jsh: grep: '%s' is a directory" RESET "\n", args[2]);
+            break;
+
+          default:
+            fprintf(stderr, RED "jsh: grep: cannot open file '%s': %s" RESET "\n", args[2], strerror(errno));
+            break;
+        }
+        return 1;
+      }
+
+      while((fgets(temp, 512, fp)) != NULL)
+      {
+        if(strstr(temp, args[1]))
+        {
+          printf("%d, %s", line_num, temp);
+          flag = 1;
+        }
+        line_num++;
+      }
+      fclose(fp);
+    }
+    else
+    {
+      fprintf(stderr, RED "jsh: grep requires two parameters, " ITALICS "PATTERN" RESET RED " and " RED ITALICS "FILE" RESET "\n");
+    }
+  }
+  if(flag == 0)
+    printf("No matches were found \n");
+  return 1;
+}
