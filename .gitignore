@@ -1,0 +1,13 @@
+#build directory
+build/
+
+#build artifacts
+jsh
+jsh.exe
+*.o
+
+#CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
