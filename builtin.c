@@ -1,5 +1,8 @@
 #include "jsh.h"
 
+
+char *clr[2] = {"clear", "null"};
+
 int jsh_cd(char **args)
 {
   if(args[1] == NULL)
