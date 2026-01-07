@@ -33,3 +33,9 @@ int jsh_help(char **args)
   }
   return 1;
 }
+
+int jsh_exit(char **args)
+{
+  (void)args;
+  return 0;
+}
