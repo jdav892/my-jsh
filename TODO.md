@@ -1,1 +1,3 @@
-# Write better guide for navigating unix system with jsh
+[]Implement security practices (Input sanitization, Path Traversal Protections, Resource Limits)
+[]Write better guide for navigating unix system with jsh
+
