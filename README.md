@@ -15,3 +15,4 @@
   - cp 
   - mv
   * as well as a history command among other standard unix commands
+  updates soon
